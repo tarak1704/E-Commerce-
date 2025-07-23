@@ -1,28 +1,10 @@
 📊 Overview
 This project aims to build an AI-powered question-answering agent that interfaces with structured e-commerce datasets. The agent uses a locally hosted or free-access LLM to understand user queries, translate them into SQL, fetch data from a relational database, and respond in a clear, human-readable format. Optionally, it also supports chart generation and streamed (real-time-like) responses for enhanced interactivity.
+
 📁 Project Structure
-pgsql
-Copy
-Edit
-ecommerce-ai-agent/
-├── app/                         # Backend application logic (Flask-based)
-│   ├── __init__.py              # Flask app initialization
-│   ├── routes.py                # API route handlers (chat, SQL query)
-│   ├── llm.py                   # LLM integration (e.g., OpenRouter, local LLMs)
-│   ├── db.py                    # Database connection and CSV-to-SQL conversion
-│   ├── utils.py                 # Helper functions: SQL prompt generation, summaries, charts
-│   └── templates/
-│       └── index.html           # Optional frontend (HTML + JS + Plotly)
-│
-├── data/                        # Raw data inputs
-│   ├── eligibility.csv          # Product eligibility info
-│   ├── ad_sales.csv             # Advertisement performance data
-│   └── total_sales.csv          # Product sales data
-│
-├── ecommerce.db                 # Compiled SQLite database from CSVs
-├── .env                         # Environment variables (e.g., API keys)
-├── requirements.txt             # Python dependencies
-└── README.md                    # Project documentation (you're here!)
+<img width="835" height="517" alt="image" src="https://github.com/user-attachments/assets/06fd0f21-f3f2-4ff2-99a8-3b5ad91a82d2" />
+
+
 1️⃣ Data Preparation
 Convert the three provided datasets into SQL tables:
 
