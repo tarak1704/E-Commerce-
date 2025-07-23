@@ -1,6 +1,28 @@
 📊 Overview
 This project aims to build an AI-powered question-answering agent that interfaces with structured e-commerce datasets. The agent uses a locally hosted or free-access LLM to understand user queries, translate them into SQL, fetch data from a relational database, and respond in a clear, human-readable format. Optionally, it also supports chart generation and streamed (real-time-like) responses for enhanced interactivity.
-🔁 Project Workflow: AI Agent for E-commerce Q&A
+📁 Project Structure
+pgsql
+Copy
+Edit
+ecommerce-ai-agent/
+├── app/                         # Backend application logic (Flask-based)
+│   ├── __init__.py              # Flask app initialization
+│   ├── routes.py                # API route handlers (chat, SQL query)
+│   ├── llm.py                   # LLM integration (e.g., OpenRouter, local LLMs)
+│   ├── db.py                    # Database connection and CSV-to-SQL conversion
+│   ├── utils.py                 # Helper functions: SQL prompt generation, summaries, charts
+│   └── templates/
+│       └── index.html           # Optional frontend (HTML + JS + Plotly)
+│
+├── data/                        # Raw data inputs
+│   ├── eligibility.csv          # Product eligibility info
+│   ├── ad_sales.csv             # Advertisement performance data
+│   └── total_sales.csv          # Product sales data
+│
+├── ecommerce.db                 # Compiled SQLite database from CSVs
+├── .env                         # Environment variables (e.g., API keys)
+├── requirements.txt             # Python dependencies
+└── README.md                    # Project documentation (you're here!)
 1️⃣ Data Preparation
 Convert the three provided datasets into SQL tables:
 
@@ -73,23 +95,6 @@ Python for backend logic and API development.
 FastAPI / Flask to expose question-answering endpoints.
 
 Matplotlib / Plotly for optional visual outputs.
-
-🔁 Workflow
-Convert all datasets into SQL tables.
-
-Select and set up an LLM (downloaded or accessed via API).
-
-Create an API that:
-
-Accepts questions
-
-Processes them using the LLM
-
-Generates SQL queries
-
-Fetches data and responds in natural language
-
-(Bonus) Stream responses and plot visualizations when applicable.
 
 ✅ Example Questions Answered
 What is my total sales?
